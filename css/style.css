@@ -1,8 +1,28 @@
 body {
-  font-family: "Verdana";
+  font-family: "Courier";
 }
 
 header {
   margin: 0 auto;
   text-align: center;
+}
+
+
+#main-container {
+  margin: 0 auto;
+  width: 700px;
+}
+
+li {
+  list-style: none;
+}
+
+li:hover {
+  list-style-type: disc;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: tomato;
 }
