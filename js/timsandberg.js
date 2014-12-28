@@ -5,6 +5,6 @@ $(function() {
   addr += email1.split('').reverse().join('');
 
   $('span.contact').html(
-    "<a href=mailto:" + addr + ">Contact</a>"
+    "<a href=mailto:" + addr + ">email me</a>"
   );
 });

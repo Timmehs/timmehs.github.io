@@ -7,6 +7,9 @@ body {
 header {
   margin: 0 auto;
   text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+
 }
 
 
@@ -31,4 +34,56 @@ a {
   text-decoration: none;
   font-weight: bold;
   color: tomato;
+}
+
+a:hover {
+  color: #cc483c;
+}
+
+.project-view {
+  margin-top: 50px;
+}
+.project-view table {
+  text-align: left;
+  width: 600px;
+}
+
+.project-view .title-desc {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+
+
+.project-view th {
+  padding-bottom: 10px;
+}
+
+.project-view td.project-image {
+  width: 300px;
+  height: 200px;
+  padding: 3px;
+  background: gray;
+}
+
+.project-desc {
+  padding-left: 20px;
+  vertical-align: top;
+  position: relative;
+}
+
+td.project-image img {
+  width: 300px;
+  height: 200px;
+}
+
+.project-links {
+  margin-top: 20px;
+
+}
+
+.project-links a {
+  width: 100px;
+  background-color: white;
+  text-align: center;
 }
