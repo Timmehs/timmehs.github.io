@@ -2,7 +2,7 @@ body {
   font-family: 'Droid Sans', sans-serif;
   padding:0px;
   margin: 0px;
-  background-color: #d9d9d9;
+  background-color: white;
   /*background-image:
     radial-gradient(
     circle at bottom right,
@@ -58,9 +58,19 @@ nav li i.active {
 
 .content {
   margin-top: 57px;
-  background: white;
+  background: #e06666;
   height: 500px;
   width: 100%;
+  position: relative;
+}
+
+.content .inner {
+  background: white;
+  width: 804px;
+  height: 494px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
 }
 
 .selector-container {
@@ -74,7 +84,7 @@ nav li i.active {
   height: 0;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
-  border-bottom: 20px solid white;
+  border-bottom: 20px solid #e06666;
   margin-right: 18px;
   transition: 0.5s;
   position: absolute;
