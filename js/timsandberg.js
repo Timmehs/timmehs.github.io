@@ -8,4 +8,5 @@ $(function() {
   $('span.contact').html(
     "<a href=mailto:" + addr + ">email me</a>"
   );
+
 });

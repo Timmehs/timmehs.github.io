@@ -2,6 +2,12 @@ body {
   font-family: Courier;
   padding:0px;
   margin: 0px;
+  background-color: whitesmoke;
+}
+
+.reveal .fa {
+  font-family: 'FontAwesome';
+  font-style: normal;
 }
 
 header {
@@ -38,6 +44,7 @@ a {
 
 a:hover {
   color: #cc483c;
+  text-decoration: none;
 }
 
 .project-view {
@@ -86,7 +93,6 @@ td.project-image img {
 
 .project-links a {
   width: 100px;
-  background-color: white;
   text-align: center;
 }
 
