@@ -1,13 +1,14 @@
 body {
-  font-family: Courier;
+  font-family: 'Droid Sans', sans-serif;
   padding:0px;
   margin: 0px;
-  background-image:
+  background-color: #d9d9d9;
+  /*background-image:
     radial-gradient(
     circle at bottom right,
     gainsboro,
-    slategray
-  );
+    whitesmoke
+  );*/
 }
 
 
@@ -16,19 +17,20 @@ header {
   margin-top: 200px;
   text-align: center;
   padding: 5px;
-  font-size: 35px;
-  font-weight: bold;
+  color: #e06666;
+  font-size: 48px;
 }
 
 header .left {
   float: left;
   padding-bottom: 15px;
+  position:absolute;
 }
 
 header .right {
   float: right;
   font-size: 30px;
-  padding-right: 20px;
+  margin-right: 26px;
 }
 
 nav li {
@@ -38,18 +40,18 @@ nav li {
 }
 
 nav li i {
-  color: gainsboro;
+  color: rgba(227, 104, 104, 0.3);
   transition: 0.5s;
 }
 
 nav li i.active {
-  color: white;
+  color: #e06666;
 }
 
 .main-container {
   padding: 10px;
   margin: 0 auto;
-  width: 700px;
+  width: 830px;
   position: relative;
   height: 500px;
 }
@@ -64,7 +66,7 @@ nav li i.active {
 .selector-container {
   position: relative;
   top: -18px;
-  left: 446px;
+  left: 569px;
   height:20px;
 }
 .selector {
