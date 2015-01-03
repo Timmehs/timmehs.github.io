@@ -28,6 +28,7 @@ header .left {
 header .right {
   float: right;
   font-size: 30px;
+  padding-right: 20px;
 }
 
 nav li {
@@ -42,7 +43,7 @@ nav li i {
 }
 
 nav li i.active {
-  color: dimgray;
+  color: white;
 }
 
 .main-container {
@@ -63,7 +64,7 @@ nav li i.active {
 .selector-container {
   position: relative;
   top: -18px;
-  left: 524px;
+  left: 446px;
   height:20px;
 }
 .selector {
@@ -79,7 +80,6 @@ nav li i.active {
 }
 
 .selector.active {
-  opacity: 1;
   top: 0px;
 }
 
@@ -89,6 +89,10 @@ nav li i.active {
 
 .selector.contact {
   left: 116px;
+}
+
+.selector.github {
+  left: 175px;
 }
 
 
