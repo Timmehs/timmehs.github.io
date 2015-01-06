@@ -103,7 +103,12 @@
 	{
 		width: 45em;
 		margin: 0 auto;
-		opacity: 0.00001;
+		opacity: 0.00000;
+		transition: opacity 1s;
+		transition-timing-function: ease;
+		-webkit-transition-timing-function: ease;
+		transition: opacity 1s;
+		-webkit-transition: opacity 1s;
 	}
 
 		#wrapper.tall

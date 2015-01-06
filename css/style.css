@@ -512,6 +512,10 @@
 		margin-top: 100px;
 		color: white;
 		font-size: 14px;
+		transition-timing-function: ease;
+		-webkit-transition-timing-function: ease;
+		transition: opacity 1s;
+		-webkit-transition: opacity 1s;
 	}
 
 		#footer a
