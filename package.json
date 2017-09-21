@@ -1,0 +1,21 @@
+{
+  "name": "timmehs.github.io",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "git@github.com:Timmehs/timmehs.github.io.git",
+  "author": "Tim Sandberg <tasandberg@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^3.6.0"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "redux": "^3.7.2",
+    "redux-router": "^2.1.2"
+  }
+}
