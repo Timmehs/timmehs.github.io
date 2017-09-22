@@ -1,8 +1,11 @@
 import { render } from 'react-dom'
 import React from 'react'
 
-const element = <h1>Hello, world</h1>;
+import '../assets/style.scss'
+
+import Main from './Main'
+
 render(
-  element,
+  <Main />,
   document.getElementById('main')
 )
