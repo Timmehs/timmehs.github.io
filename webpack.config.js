@@ -1,12 +1,26 @@
 const path = require('path');
+const webpack = require('webpack');
+  const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    app: './src/index.js'
+  },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist/js/')
+    path: path.resolve(__dirname, 'assets'),
+    publicPath: '/assets'
   },
   devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './'
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Hot Module Replacement'
+    }),
+    new webpack.HotModuleReplacementPlugin()
+  ],
   module: {
     rules: [
       {

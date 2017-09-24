@@ -1,0 +1,30 @@
+* + * {
+  margin-top: 20px;
+}
+
+nav {
+  text-align: center;
+
+  ul {
+    list-style: none;
+    width: 100%;
+    display: flex;
+
+    li {
+      margin: 0;
+      flex: 1;
+    }
+  }
+}
+
+
+// Desktop
+@media (min-width: 64em) {
+  nav {
+    * { text-align: right; }
+
+    ul {
+      display: block;
+    }
+  }
+}
