@@ -1,8 +1,18 @@
 import React from 'react'
-
+import BlogTag from './BlogTag'
 const Blog = () => (
   <div>
-    <h4 className='center'>Contentopolis</h4>
+    <p className='right'>
+      <strong>July 4th, 2017</strong>
+    </p>
+    <p className='right'>
+    {['mopeds', 'gaming', 'rails', 'react', 'aws'].map(tag => (
+      <BlogTag tagName={tag} />
+    ))}
+    </p>
+    <p>
+      <div className='buddhas' />
+    </p>
     <p>
       Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
     </p>

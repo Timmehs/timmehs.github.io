@@ -3,7 +3,7 @@ import React from 'react'
 
 import './style/main.scss'
 
-import Main from './Main'
+import Main from './components/Main'
 
 render(
   <Main />,

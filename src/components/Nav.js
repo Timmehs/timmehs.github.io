@@ -1,14 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const Nav = () => (
   <nav>
     <h4 className='font-effect-anaglyph brand'>Tim Sandberg</h4>
     <ul>
-      <li><Link activeClassName='navlink-active' to="/">Home</Link></li>
-      <li><Link activeClassName='navlink-active' to="/blog">Blog</Link></li>
-      <li><Link activeClassName='navlink-active' to="/music">Music</Link></li>
-      <li><Link activeClassName='navlink-active' to="/links">Links</Link></li>
+      <li><NavLink exact activeClassName='navlink-active' to="/">Blog</NavLink></li>
+      <li><NavLink exact activeClassName='navlink-active' to="/music">Music</NavLink></li>
+      <li><NavLink exact activeClassName='navlink-active' to="/links">Links</NavLink></li>
     </ul>
   </nav>
 )
