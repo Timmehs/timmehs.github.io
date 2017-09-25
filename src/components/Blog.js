@@ -3,7 +3,7 @@ import BlogTag from './BlogTag'
 const Blog = () => (
   <div>
     <p className='right'>
-      <strong>July 4th, 2017</strong>
+      <strong>July 2nd, 2017</strong>
     </p>
     <p className='right'>
     {['mopeds', 'gaming', 'rails', 'react', 'aws'].map(tag => (
