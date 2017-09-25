@@ -1,8 +1,12 @@
 @import '../../node_modules/skeleton-css/css/normalize.css';
 @import '../../node_modules/skeleton-css/css/skeleton.css';
 @import '../../node_modules/flexboxgrid/dist/flexboxgrid.min.css';
-// Global Styles
+
+// Global Variables
 @import './colors';
+@import './images';
+
+// Global Styles
 @import './typography';
 @import './structure';
 
