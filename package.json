@@ -6,7 +6,7 @@
   "author": "Tim Sandberg <tasandberg@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --open",
+    "start": "webpack-dev-server --devtool eval-source-map --history-api-fallback --open",
     "build": "webpack"
   },
   "devDependencies": {

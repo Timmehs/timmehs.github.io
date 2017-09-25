@@ -13,6 +13,16 @@ nav {
   }
 }
 
+.navlink-active {
+  color: $darkLiver;
+
+  &::before {
+    position: absolute;
+    left: -1em;
+    content: ">"
+  }
+}
+
 
 // Desktop
 @media (min-width: 64em) {
