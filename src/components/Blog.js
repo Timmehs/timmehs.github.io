@@ -1,14 +1,11 @@
 import React from 'react'
 import BlogTag from './BlogTag'
 import Post from './Post'
-
-import { getRawPosts } from '../util/markdown-parser'
-
-
-const posts = getRawPosts().map(data => <Post date={data.date} content={data.content} />)
+import posts from '../../assets/blog-manifest.js'
+console.log(posts)
 const Blog = () => (
   <div>
-    {posts}
+    {posts.map(data => <Post {...data} key={data.date} />)}
   </div>
 )
 

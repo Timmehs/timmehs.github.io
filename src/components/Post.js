@@ -1,18 +1,21 @@
 import React from 'react'
+import BlogTag from './BlogTag'
+import Markdown from 'markdown-to-jsx'
+import formatDate from '../util/dateFormatter'
 
-const Post = ({ date, content }) => (
+const Post = ({ date, markdown, tags, title }) => (
   <article>
     <p className='right'>
-      <strong>{date}</strong>
+      <strong>{formatDate(date)}</strong>
     </p>
     <p className='right'>
-      {['mopeds', 'gaming', 'rails', 'react', 'aws'].map(tag => (
+      {Object.keys(tags).map(tag => (
         <BlogTag tagName={tag} />
       ))}
     </p>
-    <p>
-      {content}
-    </p>
+    <Markdown>
+      {markdown}
+    </Markdown>
   </article>
 )
 

@@ -6,13 +6,12 @@ module.exports = {
   entry: {
     app: './src/index.js'
   },
-  target: 'node',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'assets'),
     publicPath: '/assets'
   },
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
   devServer: {
     contentBase: './'
   },
@@ -20,14 +19,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Hot Module Replacement'
     }),
-    new webpack.HotModuleReplacementPlugin()
-    // new webpack.DefinePlugin({ // <-- key to reducing React's size
-    //   'process.env': {
-    //     'NODE_ENV': process.env.NODE_ENV
-    //   }
-    // }),
-    // new webpack.optimize.UglifyJsPlugin(), //minify everything
-    // new webpack.optimize.AggressiveMergingPlugin()//Merge chunks
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({ // <-- key to reducing React's size
+      'process.env': {
+        'NODE_ENV': process.env.NODE_ENV
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin(), //minify everything
+    new webpack.optimize.AggressiveMergingPlugin()//Merge chunks
   ],
   module: {
     rules: [

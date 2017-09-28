@@ -1,0 +1,34 @@
+#!/usr/bin/env node
+var fs = require('fs')
+var path = require('path')
+var yaml = require('js-yaml')
+
+const POSTS_DIR = path.join(process.env.PWD, 'posts')
+const BLOG_MANIFEST = path.join(process.env.PWD, 'assets', 'blog-manifest.json')
+
+function getRawPosts() {
+  const postFiles = fs.readdirSync(POSTS_DIR)
+  return postFiles.map(file => {
+    const filePath = path.join(POSTS_DIR, file)
+    const rawFileString = fs.readFileSync(filePath, 'utf8')
+    return parsePost(rawFileString)
+  })
+}
+
+// Convert post.md file to object { date, markdown, title, tags }
+function parsePost(rawString) {
+  const splitContent = rawString.split("----\n")
+  const data = yaml.safeLoad(splitContent[0])
+  const tags = Object.assign(...data.tags.split(',').map(k => ({ [k]: true })))
+
+  return {
+    ...data,
+    tags,
+    markdown: splitContent[1]
+  }
+}
+
+
+const posts = getRawPosts()
+
+fs.writeFileSync(BLOG_MANIFEST, `module.exports = ${JSON.stringify(posts)}`)
