@@ -7,3 +7,40 @@
   border: 1px solid $babyBlue;
   text-decoration: none;
 }
+
+code.hljs {
+  padding: 0;
+  border-radius: 3px;
+  margin: 0 2rem;
+  min-width: 200px;
+  table.hljs-ln {
+    margin-top: 0;
+
+    td {
+      line-height: 1.4;
+    }
+  }
+}
+/* for block of numbers */
+td.hljs-ln-numbers {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+  background-color: rgba(255, 255, 255, 0.08);
+	text-align: center;
+  font-weight: bold;
+	color: $gainsboro;
+	border-right: 1px solid #CCC;
+	vertical-align: top;
+  padding: 0 0.5rem;
+
+	/* your custom style here */
+}
+
+/* for block of code */
+td.hljs-ln-code {
+	padding-left: 10px;
+}
