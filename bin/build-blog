@@ -28,7 +28,8 @@ function parsePost(rawString) {
   }
 }
 
-
+console.log('Retrieving and building posts...')
 const posts = getRawPosts()
-
+console.log(`Writing manifest (${posts.length} posts)...`)
 fs.writeFileSync(BLOG_MANIFEST, `module.exports = ${JSON.stringify(posts)}`)
+console.log('Done.')
