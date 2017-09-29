@@ -28,6 +28,5 @@ export default function (date) {
   const d = new Date(date)
   const month = MONTHS[d.getMonth()]
   const dayOfMonth = ordinalSuffixOf(d.getDate())
-  debugger
   return `${month} ${dayOfMonth}, ${d.getFullYear()}`
 }

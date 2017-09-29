@@ -8,7 +8,7 @@
   "scripts": {
     "start": "webpack-dev-server --devtool eval-source-map --history-api-fallback --open",
     "build": "./bin/build-blog; webpack",
-    "build-blog": "./bin/build-blog; webpack",
+    "blog": "./bin/build-blog; webpack",
     "post": "./bin/post"
   },
   "devDependencies": {
@@ -29,12 +29,12 @@
   },
   "dependencies": {
     "flexboxgrid": "^6.3.1",
-    "markdown-to-jsx": "^5.4.2",
     "js-yaml": "^3.10.0",
+    "markdown-to-jsx": "^5.4.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-highlight": "^0.10.0",
     "react-router-dom": "^4.2.2",
-    "redux": "^3.7.2",
-    "skeleton-css": "^2.0.4"
+    "redux": "^3.7.2"
   }
 }

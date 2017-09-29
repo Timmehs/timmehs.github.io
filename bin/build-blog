@@ -4,7 +4,7 @@ var path = require('path')
 var yaml = require('js-yaml')
 
 const POSTS_DIR = path.join(process.env.PWD, 'posts')
-const BLOG_MANIFEST = path.join(process.env.PWD, 'assets', 'blog-manifest.json')
+const BLOG_MANIFEST = path.join(process.env.PWD, 'assets', 'blog-manifest.js')
 
 function getRawPosts() {
   const postFiles = fs.readdirSync(POSTS_DIR)
@@ -24,12 +24,17 @@ function parsePost(rawString) {
   return {
     ...data,
     tags,
-    markdown: splitContent[1]
+    markdown: splitContent.slice(0, -1).join('')
   }
 }
 
+console.log('Begin building blog from /posts folder.')
+const startTime = new Date()
+
 console.log('Retrieving and building posts...')
 const posts = getRawPosts()
+
 console.log(`Writing manifest (${posts.length} posts)...`)
-fs.writeFileSync(BLOG_MANIFEST, `module.exports = ${JSON.stringify(posts)}`)
-console.log('Done.')
+fs.writeFileSync(BLOG_MANIFEST, `const postJSON = ${JSON.stringify(posts)};\nexport default postJSON`)
+
+console.log(`✨  Done in ${new Date() - startTime} ms`)

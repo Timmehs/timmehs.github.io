@@ -1,6 +1,7 @@
-@import '../../node_modules/skeleton-css/css/normalize.css';
-@import '../../node_modules/skeleton-css/css/skeleton.css';
+
+@import './vendor/normalize.css';
 @import '../../node_modules/flexboxgrid/dist/flexboxgrid.min.css';
+@import './vendor/typebase.css';
 
 // Global Variables
 @import './colors';
