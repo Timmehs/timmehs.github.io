@@ -9,7 +9,8 @@ class Post extends React.Component {
     const node = ReactDOM.findDOMNode(this)
     const highlight = el => highlightBlock(el)
 
-    node.querySelectorAll('pre code').forEach(el => {
+    node.querySelectorAll('pre').forEach(el => {
+      console.log(el)
       hljs.highlightBlock(el)
       hljs.lineNumbersBlock(el)
     })
