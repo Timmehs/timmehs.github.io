@@ -3,6 +3,8 @@
 @custom-media --lg-viewport only screen and (min-width: 75em);
 
 $colorText: $darkLiver;
+$colorTextLight: lighten($darkLiver, 32%);
+$contentTextSize: 1.4rem;
 
 html {
   font-size: 16px;
@@ -30,9 +32,21 @@ a {
 }
 
 p {
-  font-size: 21px;
+  font-size: $contentTextSize;
   line-height: 1.58;
   margin-top: 29px;
+}
+
+ul {
+  font-size: $contentTextSize;
+  margin-top: 2rem;
+
+  li {
+    line-height: 1.58;
+    margin: 0 0 20px 20px;
+
+    p { margin-top: 0; }
+  }
 }
 
 .brand {

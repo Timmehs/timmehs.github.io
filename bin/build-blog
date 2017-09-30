@@ -20,11 +20,11 @@ function parsePost(rawString) {
   const splitContent = rawString.split("----\n")
   const data = yaml.safeLoad(splitContent[0])
   const tags = Object.assign(...data.tags.split(',').map(k => ({ [k]: true })))
-
+  console.log(data)
   return {
     ...data,
     tags,
-    markdown: splitContent.slice(1, -1).join('')
+    markdown: splitContent.slice(1).join('')
   }
 }
 
