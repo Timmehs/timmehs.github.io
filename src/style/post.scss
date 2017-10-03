@@ -1,0 +1,27 @@
+
+.post-body {
+  padding-top: 3rem;
+}
+
+.post-body-title {
+  margin-top: 0;
+  text-align: left;
+}
+
+.post-header-image {
+  width: 100%;
+  height: 10rem;
+  margin: 1rem 0;
+  background-image: $buddhas;
+  background-position: center;
+}
+
+.post-tags {
+  margin-top: 1rem;
+}
+
+.post-date {
+  color: $colorTextLight;
+  font-weight: normal;
+  font-size: 1.2rem;
+}
