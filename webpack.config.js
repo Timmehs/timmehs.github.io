@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
-  const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BlogBuilderPlugin = require('./webpack/blog-builder-plugin');
 
 module.exports = {
   entry: {
@@ -16,6 +17,9 @@ module.exports = {
     contentBase: './'
   },
   plugins: [
+    new BlogBuilderPlugin({
+      source: path.join(process.env.PWD, './src/posts')
+    }),
     new HtmlWebpackPlugin({
       title: 'Hot Module Replacement'
     }),
@@ -26,7 +30,7 @@ module.exports = {
       }
     }),
     new webpack.optimize.UglifyJsPlugin(), //minify everything
-    new webpack.optimize.AggressiveMergingPlugin()//Merge chunks
+    new webpack.optimize.AggressiveMergingPlugin() //Merge chunks
   ],
   module: {
     rules: [
