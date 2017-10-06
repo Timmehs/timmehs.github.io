@@ -11,7 +11,7 @@ class Post extends React.Component {
 
     node.querySelectorAll('pre').forEach(el => {
       hljs.highlightBlock(el)
-      hljs.lineNumbersBlock(el)
+      hljs.lineNumbersBlock(el, { singleLine: true })
     })
   }
   render() {
