@@ -1,12 +1,19 @@
 import React from 'react'
 import BlogTag from './BlogTag'
 import Post from './Post'
-import posts from '../../assets/blog-manifest.js'
+import * as blogPosts from '../../posts/*.md'
+import { fromJS } from 'immutable'
 
-const Blog = () => (
-  <div>
-    {posts.map(data => <Post {...data} key={data.date} />)}
-  </div>
-)
+const posts = fromJS(blogPosts)
+const sortedPosts = posts.sortBy(p => {
+  return -(new Date(p.get('date')))
+})
+const Blog = () => {
+  return (
+    <div>
+      {sortedPosts.valueSeq().map(post => <Post post={post} key={post.get('title')} />)}
+    </div>
+  )
+}
 
 export default Blog

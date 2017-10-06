@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
-  const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const postLoader = require('./webpack/loaders/post-loader')
 
 module.exports = {
   entry: {
@@ -26,17 +27,27 @@ module.exports = {
       }
     }),
     new webpack.optimize.UglifyJsPlugin(), //minify everything
-    new webpack.optimize.AggressiveMergingPlugin()//Merge chunks
+    new webpack.optimize.AggressiveMergingPlugin() //Merge chunks
   ],
+  resolveLoader: {
+    modules: ['node_modules', path.resolve(__dirname, 'webpack', 'loaders')]
+  },
   module: {
     rules: [
+      {
+        test: /\.md$/,
+        use: [
+          "post-loader"
+        ]
+      },
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['env', 'react']
+            presets: ['env', 'react'],
+            plugins: ['import-glob']
           }
         }
       },
@@ -52,12 +63,6 @@ module.exports = {
           {
             loader: "sass-loader" // compiles Sass to CSS
           }
-        ]
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: [
-          'file-loader'
         ]
       }
     ]

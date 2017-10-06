@@ -9,7 +9,7 @@ touch $new_post_file
 title=$1
 shift
 
-# Build tags list: 
+# Build tags list:
 # Set Internal Field Separator to Comma so we can join the remaining args
 IFS=,
 join_tags=$*
