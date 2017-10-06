@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BlogBuilderPlugin = require('./webpack/plugins/blog-builder-plugin');
 const postLoader = require('./webpack/loaders/post-loader')
 
 module.exports = {
@@ -18,9 +17,6 @@ module.exports = {
     contentBase: './'
   },
   plugins: [
-    new BlogBuilderPlugin({
-      source: path.join(process.env.PWD, './src/posts')
-    }),
     new HtmlWebpackPlugin({
       title: 'Hot Module Replacement'
     }),
@@ -50,7 +46,8 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ['env', 'react']
+            presets: ['env', 'react'],
+            plugins: ['import-glob']
           }
         }
       },

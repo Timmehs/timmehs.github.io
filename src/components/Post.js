@@ -15,22 +15,22 @@ class Post extends React.Component {
     })
   }
   render() {
-    const { date, markdown, tags, title } = this.props;
+    const { post } = this.props;
 
     return (
       <article className='post-body'>
         <header className='left'>
-          <h2 className='post-body-title'>{title}</h2>
-          <strong className='post-date'>{formatDate(date)}</strong>
+          <h2 className='post-body-title'>{post.get('title')}</h2>
+          <strong className='post-date'>{formatDate(post.get('date'))}</strong>
         </header>
         <p className='post-tags'>
-          {Object.keys(tags).map(tag => (
+          {post.get('tags').keySeq().map(tag => (
             <BlogTag tagName={tag} key={tag} />
           ))}
         </p>
         <div className='post-header-image' />
         <Markdown>
-          {markdown}
+          {post.get('markdown')}
         </Markdown>
       </article>
     )
