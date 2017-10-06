@@ -1,5 +1,4 @@
-
-const getRawPosts = require('./util/get-raw-posts');
+const getPostFiles = require('../util/get-post-files');
 
 
 function BlogBuilderPlugin(options) {
@@ -10,15 +9,14 @@ BlogBuilderPlugin.prototype.apply = function(compiler) {
   const plugin = this;
 
   compiler.plugin('emit', function(compilation, callback) {
-    const posts = getRawPosts(plugin.source);
-
+    const fileList = getPostFiles(this.source)
     // Insert this list into the webpack build as a new file asset:
     compilation.assets['blog-manifest.js'] = {
       source: function() {
-        return `const postJSON = ${JSON.stringify(posts)};\nexport default postJSON`
+        return `module.exports = ${fileList}`
       },
       size: function() {
-        return posts.length + 2;
+        return fileList.length + 2;
       }
     };
 

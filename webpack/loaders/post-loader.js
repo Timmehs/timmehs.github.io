@@ -1,7 +1,6 @@
-var fs = require('fs')
-var path = require('path')
 var yaml = require('js-yaml')
 
+// Post Loader
 // Convert post.md file to object { date, markdown, title, tags }
 function parsePost(rawString) {
   const splitContent = rawString.split("----\n")
@@ -15,15 +14,6 @@ function parsePost(rawString) {
   }
 }
 
-function getRawPosts(postsPath) {
-  console.log(postsPath)
-  const postFiles = fs.readdirSync(postsPath)
-
-  return postFiles.map(file => {
-    const filePath = path.join(postsPath, file)
-    const rawFileString = fs.readFileSync(filePath, 'utf8')
-    return parsePost(rawFileString)
-  })
-}
-
-module.exports = getRawPosts
+module.exports = function(source) {
+  return "module.exports = " + JSON.stringify(parsePost(source));
+};

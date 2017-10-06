@@ -22,6 +22,11 @@ pre.hljs {
   min-width: 200px;
   font-size: 1rem;
 
+  code {
+    padding: 0;
+    font-size: 1rem;
+  }
+
   table.hljs-ln {
     margin-top: 0;
 
