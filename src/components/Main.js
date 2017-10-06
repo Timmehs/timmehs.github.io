@@ -12,10 +12,10 @@ import Music from './Music'
 const Main = () => (
   <Router >
     <div className='row'>
-      <div className='col-md-3 col-xs-12'>
+      <div className='col-md-2 col-xs-12'>
         <Nav />
       </div>
-      <div className='col-md-9 col-xs-12 main-content'>
+      <div className='col-md-8 col-xs-12 main-content'>
         <Route exact path="/" component={Blog} />
         <Route path="/music" component={Music} />
         <Route path="/links" component={Links} />

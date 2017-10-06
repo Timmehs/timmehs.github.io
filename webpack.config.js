@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const postLoader = require('./webpack/loaders/post-loader')
+require('./webpack/loaders/post-loader')
 
 module.exports = {
   entry: {
@@ -26,7 +26,6 @@ module.exports = {
         'NODE_ENV': process.env.NODE_ENV
       }
     }),
-    new webpack.optimize.UglifyJsPlugin(), //minify everything
     new webpack.optimize.AggressiveMergingPlugin() //Merge chunks
   ],
   resolveLoader: {

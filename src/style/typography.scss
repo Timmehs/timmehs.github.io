@@ -7,12 +7,16 @@ $colorTextLight: lighten($darkLiver, 32%);
 $contentTextSize: 1.4rem;
 
 html {
-  font-size: 16px;
+  font-size: 14px;
 }
+
+$sansFamily: "Roboto", sans-serif;
+
+$serifFamily: "Roboto Slab", serif;
 
 body {
   color: $colorText;
-  font-family: "Roboto", sans-serif;
+  font-family: $sansFamily;
 }
 
 header {
@@ -56,4 +60,10 @@ ul {
 .brand {
   font-weight: bold;
   letter-spacing: 3px;
+}
+
+@media (min-width: --lg-viewport) {
+  html {
+    font-size: 18px;
+  }
 }

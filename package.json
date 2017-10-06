@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --devtool eval-source-map --history-api-fallback --open",
-    "build": "webpack",
+    "build": "webpack -p",
     "post": "./bin/post"
   },
   "devDependencies": {

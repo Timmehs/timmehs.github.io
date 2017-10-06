@@ -18,6 +18,7 @@ cat <<- EOF > $new_post_file
 title: "$title"
 tags: $join_tags
 date: $timestamp
+header: "https://d1u0z01nzsqzn7.cloudfront.net/images/buddhaz.jpg" # Replace this with a new image
 ----
 
 write content here

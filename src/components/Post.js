@@ -16,7 +16,9 @@ class Post extends React.Component {
   }
   render() {
     const { post } = this.props;
-
+    const headerImage = {
+      backgroundImage: `url(${post.get('header')})`
+    }
     return (
       <article className='post-body'>
         <header className='left'>
@@ -28,7 +30,7 @@ class Post extends React.Component {
             <BlogTag tagName={tag} key={tag} />
           ))}
         </p>
-        <div className='post-header-image' />
+        <div className='post-header-image' style={headerImage} />
         <Markdown>
           {post.get('markdown')}
         </Markdown>
