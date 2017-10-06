@@ -1,1 +1,3 @@
-$buddhas: url('https://s3-us-west-1.amazonaws.com/timmehs.github.io/images/buddhaz.jpg');
+$cloudFrontDomain: "https://d1u0z01nzsqzn7.cloudfront.net";
+
+$buddhas: url(#{$cloudFrontDomain}/images/buddhaz.jpg);
