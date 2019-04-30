@@ -1,19 +1,17 @@
 import React from 'react'
-import BlogTag from './BlogTag'
 import Post from './Post'
-import * as blogPosts from '../../posts/*.md'
-import { fromJS } from 'immutable'
+import PropTypes from 'prop-types'
 
-const posts = fromJS(blogPosts)
-const sortedPosts = posts.sortBy(p => {
-  return -(new Date(p.get('date')))
-})
-const Blog = () => {
-  return (
-    <div>
-      {sortedPosts.valueSeq().map(post => <Post post={post} key={post.get('title')} />)}
-    </div>
-  )
+const Blog = ({ posts }) => (
+  <div>
+    {posts.map(post => (
+      <Post post={post} key={post.date} />
+    ))}
+  </div>
+)
+
+Blog.propTypes = {
+  posts: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default Blog

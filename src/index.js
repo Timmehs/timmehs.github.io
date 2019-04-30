@@ -1,11 +1,13 @@
-import { render } from 'react-dom'
+import './style/index.scss'
+import App from './components/App'
+
 import React from 'react'
+import { render, hydrate } from 'react-dom'
 
-import './style/main.scss'
+const rootElement = document.getElementById('buddhablog') // TODO: Make this configurable?
 
-import Main from './components/Main'
-
-render(
-  <Main />,
-  document.getElementById('main')
-)
+if (rootElement.hasChildNodes()) {
+  hydrate(<App />, rootElement)
+} else {
+  render(<App />, rootElement)
+}

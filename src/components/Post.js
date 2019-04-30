@@ -1,43 +1,47 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import BlogTag from "./BlogTag";
-import Markdown from "markdown-to-jsx";
-import formatDate from "../util/dateFormatter";
+import React, { Fragment } from 'react'
+import PropTypes from 'prop-types'
+import BlogTag from './BlogTag'
+import Markdown from 'markdown-to-jsx'
+import formatDate from '../util/dateFormatter'
+import CodeBlock from './CodeBlock'
 
-class Post extends React.Component {
-  componentDidMount() {
-    const node = ReactDOM.findDOMNode(this);
-    const highlight = el => highlightBlock(el);
+const headerBackground = post => ({ backgroundImage: `url(${post.header})` })
 
-    node.querySelectorAll("pre").forEach(el => {
-      hljs.highlightBlock(el);
-      hljs.lineNumbersBlock(el, { singleLine: true });
-    });
-  }
-  render() {
-    const { post } = this.props;
-    const headerImage = {
-      backgroundImage: `url(${post.get("header")})`
-    };
-    return (
-      <article className="post-body">
-        <header className="left">
-          <h1 className="post-body-title">{post.get("title")}</h1>
-          <strong className="post-date">{formatDate(post.get("date"))}</strong>
-        </header>
-        <p className="post-tags">
-          {post
-            .get("tags")
-            .keySeq()
-            .map(tag => (
-              <BlogTag tagName={tag} key={tag} />
-            ))}
-        </p>
-        <div className="post-header-image" style={headerImage} />
-        <Markdown>{post.get("markdown")}</Markdown>
-      </article>
-    );
-  }
+const Post = ({ post }) => (
+  <article className="post-body">
+    <header className="left">
+      {post.title ? (
+        <Fragment>
+          <h2 className="post-body-title"> {post.title} </h2>
+          <strong className="post-date">{formatDate(post.date)}</strong>
+        </Fragment>
+      ) : (
+        <h2 className="post-body-title">{formatDate(post.date)}</h2>
+      )}
+    </header>
+    {post.tags && (
+      <p className="post-tags">
+        {post.tags.map(tag => (
+          <BlogTag tagName={tag} key={tag} />
+        ))}
+      </p>
+    )}
+    {post.header && (
+      <div className="post-header-image" style={headerBackground(post)} />
+    )}
+    <Markdown
+      options={{
+        overrides: {
+          pre: { component: CodeBlock }
+        }
+      }}>
+      {post.markdown}
+    </Markdown>
+  </article>
+)
+
+Post.propTypes = {
+  post: PropTypes.object.isRequired
 }
 
-export default Post;
+export default Post
