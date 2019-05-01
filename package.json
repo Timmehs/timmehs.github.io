@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn webpack-dev-server --history-api-fallback --open --config ./webpack.dev.js",
-    "build": "yarn webpack -p --config ./webpack.prod.js",
+    "build": "yarn webpack -p --config ./webpack.prod.js && react-snap",
     "post": "buddha post",
     "page": "buddha page",
     "deploy": "node ./bin/deploy.js"

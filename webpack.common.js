@@ -24,7 +24,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: [
-        "build/assets/**/*",
+        "**/*",
         "index.html",
         "!CNAME",
         "!favicon.ico",
