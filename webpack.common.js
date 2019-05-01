@@ -21,6 +21,11 @@ module.exports = {
       chunks: "all"
     }
   },
+  resolve: {
+    alias: {
+      util: path.resolve(__dirname, "src", "util")
+    }
+  },
   plugins: [
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: [

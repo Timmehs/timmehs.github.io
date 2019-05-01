@@ -1,17 +1,23 @@
-import React from 'react'
-import Post from './Post'
-import PropTypes from 'prop-types'
+import React from "react";
+import PostPreview from "./PostPreview";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Blog = ({ posts }) => (
   <div>
     {posts.map(post => (
-      <Post post={post} key={post.date} />
+      <p>{JSON.stringify(post, null, 4)}</p>
     ))}
   </div>
-)
+);
 
 Blog.propTypes = {
   posts: PropTypes.arrayOf(PropTypes.object).isRequired
+};
+{
+  /* <Link to={post.slug}>
+  <PostPreview post={post} key={post.date} />
+</Link> */
 }
 
-export default Blog
+export default Blog;
