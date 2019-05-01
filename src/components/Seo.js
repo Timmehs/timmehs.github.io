@@ -1,6 +1,6 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import PropTypes from 'prop-types'
+import React from "react";
+import Helmet from "react-helmet";
+import PropTypes from "prop-types";
 
 // const postTags = post => {
 //   const tags = [
@@ -22,28 +22,28 @@ import PropTypes from 'prop-types'
 
 const Seo = ({ title, description, post }) => {
   const meta = [
-    { itemprop: 'name', content: title },
-    { itemprop: 'description', content: description },
-    { name: 'description', content: description },
-    { name: 'twitter:title', content: title },
-    { name: 'twitter:description', content: description },
-    { name: 'og:title', content: title },
-    { name: 'og:url', content: window.location.href },
+    { itemprop: "name", content: title },
+    { itemprop: "description", content: description },
+    { name: "description", content: description },
+    { name: "twitter:title", content: title },
+    { name: "twitter:description", content: description },
+    { name: "og:title", content: title },
+    { name: "og:url", content: window.location.href },
     {
-      name: 'og:image',
-      content: 'https://d1u0z01nzsqzn7.cloudfront.net/images/enso.png'
+      name: "og:image",
+      content: "https://d1u0z01nzsqzn7.cloudfront.net/images/enso.png"
     },
-    { name: 'og:description', content: description },
-    { name: 'og:locale', content: 'en_EN' }
-  ]
+    { name: "og:description", content: description },
+    { name: "og:locale", content: "en_EN" }
+  ];
 
-  return <Helmet titleTemplate="%s | BuddhaBlog" title={title} meta={meta} />
-}
+  return <Helmet titleTemplate="%s | Tim Sandberg" title={title} meta={meta} />;
+};
 
 Seo.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   post: PropTypes.object
-}
+};
 
-export default Seo
+export default Seo;

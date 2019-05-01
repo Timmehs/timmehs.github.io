@@ -7,9 +7,10 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn webpack-dev-server --history-api-fallback --open --config ./webpack.dev.js",
-    "build": "webpack -p --config ./webpack.prod.js",
+    "build": "yarn webpack -p --config ./webpack.prod.js",
     "post": "buddha post",
-    "page": "buddha page"
+    "page": "buddha page",
+    "deploy": "node ./bin/deploy.js"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
