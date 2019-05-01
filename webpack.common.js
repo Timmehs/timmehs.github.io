@@ -23,7 +23,13 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin({
-      cleanAfterEveryBuildPatterns: ["!CNAME", "!favicon.ico", "!README.md"]
+      cleanOnceBeforeBuildPatterns: [
+        "build/assets/**/*",
+        "index.html",
+        "!CNAME",
+        "!favicon.ico",
+        "!README.md"
+      ]
     }),
     new webpack.ContextReplacementPlugin(
       /highlight\.js\/lib\/languages$/,
