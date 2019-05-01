@@ -1,10 +1,10 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import PropTypes from 'prop-types'
+import React from "react";
+import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const NavigationBar = ({ pages }) => (
   <nav>
-    <h3 className="font-effect-anaglyph brand">My Blog</h3>
+    <h3 className="font-effect-anaglyph brand">Tim Sandberg</h3>
     <ul>
       <li>
         <NavLink exact activeClassName="navlink-active" to="/">
@@ -20,10 +20,10 @@ const NavigationBar = ({ pages }) => (
       ))}
     </ul>
   </nav>
-)
+);
 
 NavigationBar.propTypes = {
   pages: PropTypes.arrayOf(PropTypes.object).isRequired
-}
+};
 
-export default NavigationBar
+export default NavigationBar;
