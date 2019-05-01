@@ -12,6 +12,11 @@
     "page": "buddha page",
     "deploy": "node ./bin/deploy.js"
   },
+  "reactSnap": {
+    "minifyHtml": {
+      "collapseWhitespace": false
+    }
+  },
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
