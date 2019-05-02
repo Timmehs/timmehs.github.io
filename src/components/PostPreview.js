@@ -1,16 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
-import dateFormatter from "util/dateFormatter";
+import dateFormatter from "../util/dateFormatter";
+import BlogTag from "./BlogTag";
+import { Link } from "react-router-dom";
 
 const PostPreview = ({ post }) => (
-  <div className="card">
-    <div className="card-title">{post.title}</div>
-    <div className="card-helper">{dateFormatter(post.date)}</div>
+  <div className="card mb-2">
     <div className="card-body">
+      <div className="card-title">
+        <h3>
+          <Link to={`/posts/${post.slug}`}>{post.title}</Link>
+        </h3>
+      </div>
+      <div className="card-helper">{dateFormatter(post.date)}</div>
       {post.tags && (
         <p className="post-tags">
           {post.tags.map(tag => (
-            <BlogTag tagName={tag} key={tag} />
+            <span key={tag} className="blog-tag">
+              {tag}
+            </span>
           ))}
         </p>
       )}
