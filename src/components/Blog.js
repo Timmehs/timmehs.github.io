@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
-import PostPreview from "./PostPreview";
-import PropTypes from "prop-types";
+import React, { Fragment } from 'react'
+import PostPreview from './PostPreview'
+import PropTypes from 'prop-types'
 
 const Blog = ({ posts }) => (
   <Fragment>
@@ -8,10 +8,10 @@ const Blog = ({ posts }) => (
       <PostPreview key={post.slug} post={post} />
     ))}
   </Fragment>
-);
+)
 
 Blog.propTypes = {
   posts: PropTypes.arrayOf(PropTypes.object).isRequired
-};
+}
 
-export default Blog;
+export default Blog

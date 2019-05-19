@@ -6,7 +6,7 @@
   "author": "Tim Sandberg <tasandberg@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "yarn webpack-dev-server --history-api-fallback --open --config ./webpack.dev.js",
+    "start": "buddha start",
     "build": "yarn webpack -p --config ./webpack.prod.js && react-snap",
     "post": "buddha post",
     "page": "buddha page",

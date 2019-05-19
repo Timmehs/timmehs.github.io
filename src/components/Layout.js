@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import NavigationBar from "./NavigationBar";
-import Post from "./Post";
-import Blog from "./Blog";
-import Page from "./Page";
+import React from 'react'
+import PropTypes from 'prop-types'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import NavigationBar from './NavigationBar'
+import Post from './Post'
+import Blog from './Blog'
+import Page from './Page'
 
 const findPost = (routeData, posts) => posts.find(p => p.slug === routeData.match.params.slug)
 
@@ -23,7 +23,7 @@ const Layout = ({ posts, pages }) => (
         {/* Build Routes for all non-blog pages */}
         {pages.map(page => (
           <Route
-            path={"/" + page.slug}
+            path={'/' + page.slug}
             key={page.slug}
             render={() => <Page title={page.title} content={page.markdown} />}
           />
@@ -31,11 +31,11 @@ const Layout = ({ posts, pages }) => (
       </div>
     </div>
   </Router>
-);
+)
 
 Layout.propTypes = {
   posts: PropTypes.array.isRequired,
   pages: PropTypes.array.isRequired
-};
+}
 
-export default Layout;
+export default Layout
