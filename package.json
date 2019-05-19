@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "buddha start",
-    "build": "yarn webpack -p --config ./webpack.prod.js && react-snap",
+    "build": "buddha build",
     "post": "buddha post",
     "page": "buddha page",
     "deploy": "node ./bin/deploy.js"
