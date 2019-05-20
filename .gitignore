@@ -1,7 +1,5 @@
 .DS_Store
 node_modules
-build/assets
-build/index.html
-build/200.html
-build/404.html
-
+build/*
+!build/CNAME
+!build/favicon.ico
